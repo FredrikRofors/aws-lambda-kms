@@ -5,7 +5,7 @@ The project consists of two Lambda functions; one responsible for encrypting som
 
 <ul>
     <li>
-        <strong>FRY_Enrypt</strong> Takes a JSON input param named 'text' which is the cleartext to encrypt. Outputs a base64 encoded encryption blob object.
+        <strong>FRY_Encrypt</strong> Takes a JSON input param named 'text' which is the cleartext to encrypt. Outputs a base64 encoded encryption blob object.
     </li> 
     <li>
         <strong>FRY_Decrypt</strong> Takes the base64 encoded string as input and decodes and decrypts the blob back to cleartext.
@@ -18,5 +18,5 @@ The project consists of two Lambda functions; one responsible for encrypting som
     <li>Run `npm install` in the src/lambda/FRY_Encrypt and src/lambda/FRY_Decrypt folders.</li>
     <li>Create a symmetric KMS key via the AWS Console and configure the generatorKeyId and keyIds settings in the .../FRY_Encrypt/index.js and .../FRY_Decrupt/index.js files.</li>
     <li>Run `sh deploy.sh` in the .../FRY_Encrypt and .../FRY_Decrypt folder to generate the deployment zip-files.</li>
-    <li>Create two lamdas in the AWS Console and choose 'Upload from .zip files'</li>
+    <li>Create two Lambda functions via the AWS Console and choose 'Upload from .zip files'</li>
 </ol>
