@@ -6,7 +6,7 @@ const {
 
 const { encrypt } = buildClient(CommitmentPolicy.REQUIRE_ENCRYPT_REQUIRE_DECRYPT);
 
-// https://eu-west-1.console.aws.amazon.com/kms/home?region=eu-west-1#/kms/keys/e05d9179-ab12-45f3-afb2-36ee3a477d5b/aliases
+// these settings can be found the in the AWS Console -> KMS for the selected key
 const generatorKeyId = 'arn:aws:kms:eu-west-1:502270545588:alias/FRY_Demo';
 const keyIds = [
     'arn:aws:kms:eu-west-1:502270545588:key/e05d9179-ab12-45f3-afb2-36ee3a477d5b',
@@ -37,11 +37,6 @@ exports.handler = async (event, context, callbacks) => {
 }
 
 async function encryptWithKmsSimple(clearText) {    
-    // https://eu-west-1.console.aws.amazon.com/kms/home?region=eu-west-1#/kms/keys/e05d9179-ab12-45f3-afb2-36ee3a477d5b/aliases
-    const generatorKeyId = 'arn:aws:kms:eu-west-1:502270545588:alias/FRY_Demo';
-    const keyIds = [
-        'arn:aws:kms:eu-west-1:502270545588:key/e05d9179-ab12-45f3-afb2-36ee3a477d5b',
-    ];
     const keyring = new KmsKeyringNode({ generatorKeyId, keyIds });
 
     // encrypt the data    
